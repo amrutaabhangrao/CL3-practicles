@@ -1,0 +1,58 @@
+
+
+Command For Haddop Project for CI-2 and DC-10
+
+
+
+
+
+java -version
+Hadoop version
+
+start-dfs.cmd	-to start namenode and data node
+
+start-yarn.cmd	-nodemanager and resource manager to start
+
+jps---------verify the all node start or not
+
+Delete Project: hdfs dfs -rm -r /HaddopAnil-------------to delete previous project
+
+hdfs dfs -mkdir /HaddopAnil-------to make folder in haddop for project 
+
+cd to Folder That Created--------change directory
+
+
+C:\My Hadoop\Hadoop>hdfs dfs -put input.txt /HaddopAnil		-put our input file in created folder in hadoop
+
+C:\My Hadoop\Hadoop>hadoop classpath		-To get path of Hadoop Class
+
+C:\My Hadoop\Hadoop>javac -classpath "C:\hadoop\etc\hadoop;C:\hadoop\share\hadoop\common;C:\hadoop\share\hadoop\common\lib\*;C:\hadoop\share\hadoop\common\*;C:\hadoop\share\hadoop\hdfs;C:\hadoop\share\hadoop\hdfs\lib\*;C:\hadoop\share\hadoop\hdfs\*;C:\hadoop\share\hadoop\yarn;C:\hadoop\share\hadoop\yarn\lib\*;C:\hadoop\share\hadoop\yarn\*;C:\hadoop\share\hadoop\mapreduce\lib\*;C:\hadoop\share\hadoop\mapreduce\*" -d . CharacterCount.java
+
+
+C:\My Hadoop\Hadoop>javac -classpath "C:\hadoop\etc\hadoop;C:\hadoop\share\hadoop\common;C:\hadoop\share\hadoop\common\lib\*;C:\hadoop\share\hadoop\common\*;C:\hadoop\share\hadoop\hdfs;C:\hadoop\share\hadoop\hdfs\lib\*;C:\hadoop\share\hadoop\hdfs\*;C:\hadoop\share\hadoop\yarn;C:\hadoop\share\hadoop\yarn\lib\*;C:\hadoop\share\hadoop\yarn\*;C:\hadoop\share\hadoop\mapreduce\lib\*;C:\hadoop\share\hadoop\mapreduce\*" -d . WordCount.java
+
+
+above path to compile java file 
+
+
+
+C:\My Hadoop\Hadoop>jar -cvf CharacterCount.jar *.class		
+
+C:\My Hadoop\Hadoop>jar -cvf WordCount.jar *.class
+
+
+above to create jar file of java
+
+
+C:\My Hadoop\Hadoop>hadoop jar CharacterCount.jar CharacterCount /input /Char_Out
+
+C:\My Hadoop\Hadoop>hadoop jar WordCount.jar WordCount /input /Word_Out
+
+To Run Job and Create OutPut File
+
+C:\My Hadoop\Hadoop>hdfs dfs -cat /Char_Out/part-r-00000
+
+C:\My Hadoop\Hadoop>hdfs dfs -cat /Word_Out/part-r-00000
+
+TO Print The Output
+
